@@ -70,5 +70,22 @@ namespace Alura.LeilaoOnline.Selenium.Testes
             // Assert
             Assert.Contains("section-registro", driver.PageSource);
         }
+
+        [Fact]
+        public void DadoNomeEmBrancoDeveMostrarMensagemDeErro()
+        {
+            // Arrange
+            driver.Navigate().GoToUrl("http://localhost:5000");
+
+            IWebElement btnRegistro = driver.FindElement(By.Id("btnRegistro"));
+
+            // Act
+            btnRegistro.Click();
+
+            IWebElement elemento;
+
+            // Assert
+            Assert.True(elemento.Displayed);
+        }
     }
 }
