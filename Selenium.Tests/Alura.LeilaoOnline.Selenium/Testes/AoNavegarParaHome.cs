@@ -2,9 +2,10 @@ using Alura.LeilaoOnline.Selenium.Fixtures;
 using OpenQA.Selenium;
 using Xunit;
 
-namespace Alura.LeilaoOnline.Selenium
+namespace Alura.LeilaoOnline.Selenium.Testes
 {
-    public class AoNavegarParaHome : IClassFixture<TestFixture>
+    [Collection("Chrome Driver")]
+    public class AoNavegarParaHome
     {
         private IWebDriver driver;
 
