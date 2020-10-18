@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaelumPaginaInicial", "CaelumPaginaInicial\CaelumPaginaInicial.csproj", "{D6F18436-3DAA-441D-8972-00E8E2737318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F18436-3DAA-441D-8972-00E8E2737318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F18436-3DAA-441D-8972-00E8E2737318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F18436-3DAA-441D-8972-00E8E2737318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F18436-3DAA-441D-8972-00E8E2737318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E6CD13D-6249-4D63-A8EC-062B7B0990BE}
+	EndGlobalSection
+EndGlobal
