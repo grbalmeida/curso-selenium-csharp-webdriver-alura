@@ -1,18 +1,23 @@
 using Alura.LeilaoOnline.Selenium.Helpers;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
 using Xunit;
 
 namespace Alura.LeilaoOnline.Selenium
 {
-    public class AoNavegarParaHome
+    public class AoNavegarParaHome : IDisposable
     {
+        private ChromeDriver driver;
+
+        // Setup
+        public AoNavegarParaHome()
+        {
+            driver = new ChromeDriver(TestHelper.PastaDoExecutavel);
+        }
+
         [Fact]
         public void DadoChromeAbertoDeveMostrarLeiloesNoTitulo()
         {
-            // Arrange
-            IWebDriver driver = new ChromeDriver(TestHelper.PastaDoExecutavel);
-
             // Act
             driver.Navigate().GoToUrl("http://localhost:5000");
 
@@ -25,9 +30,6 @@ namespace Alura.LeilaoOnline.Selenium
         [Fact]
         public void DadoChromeAbertoDeveMostrarProximosLeiloesNaPagina()
         {
-            // Arrange
-            IWebDriver driver = new ChromeDriver(TestHelper.PastaDoExecutavel);
-
             // Act
             driver.Navigate().GoToUrl("http://localhost:5000");
 
@@ -35,6 +37,12 @@ namespace Alura.LeilaoOnline.Selenium
             Assert.Contains("Próximos Leilões", driver.PageSource);
 
             driver.Close();
+        }
+
+        // TearDown
+        public void Dispose()
+        {
+            driver?.Quit();
         }
     }
 }
