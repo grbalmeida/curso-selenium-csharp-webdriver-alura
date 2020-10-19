@@ -1,5 +1,6 @@
 using Alura.LeilaoOnline.Selenium.Fixtures;
 using OpenQA.Selenium;
+using System.Collections.ObjectModel;
 using Xunit;
 
 namespace Alura.LeilaoOnline.Selenium.Testes
@@ -32,6 +33,22 @@ namespace Alura.LeilaoOnline.Selenium.Testes
 
             // Assert
             Assert.Contains("Próximos Leilões", driver.PageSource);
+        }
+
+        [Fact]
+        public void DadoChromeAbertoFormularioRegistroNaoDeveMostrarMensagensDeErro()
+        {
+            // Act
+            driver.Navigate().GoToUrl("http://localhost:5000");
+
+            // Assert
+            IWebElement form = driver.FindElement(By.TagName("form"));
+            ReadOnlyCollection<IWebElement> spans = form.FindElements(By.TagName("span"));
+        
+            foreach (var span in spans)
+            {
+                Assert.True(string.IsNullOrEmpty(span.Text));
+            }    
         }
     }
 }
